@@ -4,7 +4,7 @@ import { defineConfig } from 'vite';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/45.2-ts/',
+  base: '/AIT-react-ts/',
   css: {
     modules: {
       // Настройка формата имен классов
