@@ -1,0 +1,30 @@
+.myButton {
+  margin: 3px;
+}
+
+
+/* основной цвет кнопки */
+.primary {
+  background-color: #006cd0
+}
+
+.danger {
+  background-color: #b92508
+}
+
+.primary:hover {
+  background-color: #03265A;
+}
+
+.danger:hover {
+  background-color: #571103
+}
+
+.disabled {
+  background-color: #ccc;
+  color: rgb(108, 108, 108);
+  cursor: not-allowed;
+}
+
+.disabled:hover {
+  background-color: #ccc;}

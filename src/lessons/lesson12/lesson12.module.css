@@ -1,0 +1,28 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  width: 250px;
+}
+
+.form > input {
+  padding: 6px;
+  margin-bottom: 5px;
+}
+
+.formGuide {
+  padding: 0px;
+  width: 480px;
+  list-style: none;
+  /* list-style-position: inside; */
+}
+
+.formGuide li {
+  counter-increment: list-counter;
+}
+
+.formGuide li::before {
+  content: counter(list-counter) ". ";
+  font-weight: bold;
+  color: red;
+}

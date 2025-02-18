@@ -1,0 +1,27 @@
+.heading {
+  font-size: 30px;
+  /* text-decoration: underline; */
+}
+
+.desc {
+  font-style: italic;
+}
+
+/* такой селектор неудобно использовать в css modules */
+.text-orange {
+  color: orange
+}
+
+/* такой селектор предпочтительнее */
+.textOrange {
+  color: orange
+}
+
+.list > li {
+  list-style: none;
+}
+
+/* добавили кастомную замену точке для элементов списка  */
+.list > li::before {
+  content: '⚡️ ';
+}

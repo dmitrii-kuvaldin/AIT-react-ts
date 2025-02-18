@@ -1,0 +1,23 @@
+.lessonContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.robotForm {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.robotForm > input {
+  margin-bottom: 5px;
+}
+
+.robotForm > button {
+  font-size: 13px;
+  padding: 5px;
+}
+
+.errorMessage {
+  color: red;
+}

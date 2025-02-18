@@ -1,0 +1,89 @@
+# name: Deploy to GitHub Pages
+
+# on:
+#   push:
+#     branches:
+#       - main  # Деплой запускается при пуше в ветку main
+#   workflow_dispatch:  # Позволяет запускать workflow вручную из вкладки Actions
+
+# permissions:
+#   contents: read
+#   pages: write
+#   id-token: write
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v3
+
+#       - name: Set up Node.js
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: 18  # Используйте вашу версию Node.js
+#           cache: 'npm'
+
+#       - name: Install dependencies
+#         run: npm ci  # Устанавливаем зависимости
+
+#       - name: Lint code
+#         run: npm run lint  # Запускаем ESLint для проверки кода
+
+#       - name: Build project
+#         run: npm run build  # Сборка проекта с помощью Vite
+
+#       - name: Upload production-ready build files
+#         uses: actions/upload-pages-artifact@v3  # Используем последнюю версию действия
+#         with:
+#           path: ./dist  # Папка, собранная Vite
+
+#   deploy:
+#     runs-on: ubuntu-latest
+#     needs: build
+#     environment:
+#       name: github-pages
+#       url: ${{ steps.deployment.outputs.page_url }}
+#     steps:
+#       - name: Deploy to GitHub Pages
+#         id: deployment
+#         uses: actions/deploy-pages@v1  # Используем последнюю версию действия
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Запуск деплоя при пуше в ветку main
+  workflow_dispatch:  # Позволяет запускать workflow вручную из вкладки Actions
+
+permissions:
+  contents: write  # Необходимо для деплоя на GitHub Pages
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18  # Укажите вашу версию Node.js
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci  # Установка зависимостей
+
+      - name: Lint code
+        run: npm run lint  # Запуск ESLint для проверки кода
+
+      - name: Build project
+        run: npm run build  # Сборка проекта с помощью Vite
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages  # Ветка для деплоя
+          folder: dist  # Папка со сборкой проекта

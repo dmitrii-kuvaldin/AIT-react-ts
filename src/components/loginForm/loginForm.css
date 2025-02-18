@@ -1,0 +1,10 @@
+.myForm {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.myForm > input {
+  margin: 4px;
+}

@@ -1,0 +1,33 @@
+.heroGallery {
+  display: grid;
+  gap: 4px;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+
+.heroCard {
+  /* max-width: 480px; */
+  padding: 10px 40px 10px;
+  border: 1px solid;
+  border-radius: 10px;
+  margin: 6px;
+}
+
+.heroCardImgWrapper {
+  overflow: hidden;
+  border-radius: 20%;
+  height: 400px;
+}
+
+.heroCardLight {
+  border: 2px solid rgb(0, 98, 255);
+}
+
+.heroCardDark {
+  border: 2px solid red;
+}
+
+.heroCardImgWrapper>img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

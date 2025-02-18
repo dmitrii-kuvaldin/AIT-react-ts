@@ -1,0 +1,17 @@
+/* стили для контейнера обертки */
+.fox-wrapper {
+  margin-top: 100px;
+  width: 350px;
+  height: 300px;
+  margin-bottom: 10px;
+  border: 2px dashed darkorange;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/* стили для самой картинки */
+.fox-wrapper > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
